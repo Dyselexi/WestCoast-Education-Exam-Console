@@ -9,9 +9,10 @@ namespace WestCoastEducation.Domain.Models
     {
         public DateTime HiredDate { get; set; }
 
-        public EducationalLeader(string firstName) : base(firstName)
+        public EducationalLeader(string firstName, string lastName, string phoneNumber, int personNumber, string adress, int zipcode, string city, DateTime hiredDate)
+        : base(firstName, lastName, phoneNumber, personNumber, adress, zipcode, city)
         {
-            
+            HiredDate = hiredDate;
         }
         public override string ToString()
         {

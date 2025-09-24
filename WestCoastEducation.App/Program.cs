@@ -8,12 +8,13 @@ class Program
 {
     static void Main(string[] args)
     {
-        Student elev = new Student("Johan", "Widell", 0708717599, 19950301, "Mariedalsvägen", 21745, "Malmö");
+        Student elev = Student.CreateStudent();
         // Teacher lärare = new Teacher("Marie");
         // EducationalLeader administratör = new EducationalLeader("Gittan");
         // Admin adm = new Admin("Chrille");
 
 
+        Console.WriteLine("Studentinformation: ");
         Console.WriteLine(elev);
         
 

@@ -14,7 +14,7 @@ namespace WestCoastEducation.Domain.Models
         public DateTime EndDate { get; set; }
         public bool IsClassRoom { get; set; }
 
-        public Teacher ResponsibleTeacher { get; set; }
+        public Teacher? ResponsibleTeacher { get; set; }
         public List<Student> Studenter { get; set; } = new List<Student>();        
         public override string ToString()
         {

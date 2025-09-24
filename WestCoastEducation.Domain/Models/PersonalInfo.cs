@@ -9,18 +9,22 @@ namespace WestCoastEducation.Domain.Models
     {
         public string FirstName { get; set; } ="";
         public string LastName { get; set; } ="";
-        public int PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
         public int PersonNummer { get; set; }
         public string Adress { get; set; } = "";
         public int ZipCode { get; set; } 
         public string City { get; set; } = "";
 
 
-        public PersonalInfo() { }
-
-        public PersonalInfo(string firstName)
+        public PersonalInfo(string firstName, string lastName, string phoneNumber, int personNumber, string adress, int zipcode, string city)
         {
             FirstName = firstName;
+            LastName = lastName;
+            PhoneNumber = phoneNumber;
+            PersonNummer = personNumber;
+            Adress = adress;
+            ZipCode = zipcode;
+            City = city;
         }
 
         public override string ToString()
