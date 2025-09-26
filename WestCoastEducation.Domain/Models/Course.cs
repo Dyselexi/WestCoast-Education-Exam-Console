@@ -61,7 +61,7 @@ namespace WestCoastEducation.Domain.Models
         
         public override string ToString()
         {
-            return $"{Title}, {LengthWeek} veckor, start: {StartDate:yyyy-MM-dd} slut: {EndDate:yyyy-MM-dd} ({(IsClassRoom ? "Klassrum" : "Distans")})";
+            return $"{Title}, {ResponsibleTeacher.FirstName} {LengthWeek} veckor, start: {StartDate:yyyy-MM-dd} slut: {EndDate:yyyy-MM-dd} ({(IsClassRoom ? "Klassrum" : "Distans")})";
         }
     }
 }
