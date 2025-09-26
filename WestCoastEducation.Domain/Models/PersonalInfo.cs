@@ -9,11 +9,13 @@ namespace WestCoastEducation.Domain.Models
     {
         public string FirstName { get; set; } ="";
         public string LastName { get; set; } ="";
-        public string PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; } = "";
         public int PersonNummer { get; set; }
         public string Adress { get; set; } = "";
         public int ZipCode { get; set; } 
         public string City { get; set; } = "";
+
+        public PersonalInfo() { }
 
 
         public PersonalInfo(string firstName, string lastName, string phoneNumber, int personNumber, string adress, int zipcode, string city)

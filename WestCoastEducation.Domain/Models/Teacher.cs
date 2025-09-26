@@ -10,6 +10,9 @@ namespace WestCoastEducation.Domain.Models
         public string KnowledgeArea { get; set; } ="";
         public List<Course> ResponsibleCourse { get; set; } = new List<Course>();
 
+        public Teacher() : base() { }
+
+
         public Teacher(string firstName, string lastName, string phoneNumber, int personNumber, string adress, int zipcode, string city)
         : base(firstName, lastName, phoneNumber, personNumber, adress, zipcode, city)
         {
