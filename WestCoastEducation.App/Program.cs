@@ -99,7 +99,7 @@ class Program
             }
             else
             {
-                Console.WriteLine("Felaktigt val, försök igen.");
+                Console.WriteLine("Felaktigt val, försök igen. observera att endast knappval 1,2,5 och 6 är funktionsdugliga.");
             }
         }
        
