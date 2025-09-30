@@ -92,7 +92,7 @@ class Program
                 foreach (var course in courses)
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine(course.ToString());
+                    Console.WriteLine(course);
                     Console.WriteLine("");
                     Console.ResetColor();
                 }

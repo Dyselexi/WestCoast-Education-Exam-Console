@@ -12,11 +12,10 @@ namespace WestCoastEducation.Domain.Models
         public DateTime EndDate { get; set; }
         public bool IsClassRoom { get; set; }
 
-        public Teacher? ResponsibleTeacher { get; set; }
-        public List<Student> Studenter { get; set; } = new List<Student>();
+        
 
         
-        public Course(string title, int lengthWeek, DateTime startDate, DateTime endDate, bool isClassRoom, Teacher? responsibleTeacher, List<Student> studenter)
+        public Course(string title, int lengthWeek, DateTime startDate, DateTime endDate, bool isClassRoom)
         {
             
             Title = title;
@@ -24,8 +23,7 @@ namespace WestCoastEducation.Domain.Models
             StartDate = startDate;
             EndDate = endDate;
             IsClassRoom = isClassRoom;
-            ResponsibleTeacher = responsibleTeacher;
-            Studenter = studenter;
+            
         }
 
         
@@ -36,9 +34,6 @@ namespace WestCoastEducation.Domain.Models
             Console.Write("Kursnamn: ");
             string title = Console.ReadLine() ?? "";
 
-            Console.Write("Ansvarig lärare: ");
-            string teacherName = Console.ReadLine() ?? "Okänd";
-            Teacher responsibleTeacher = new Teacher { FirstName = teacherName };
 
             Console.Write("Längd i veckor: ");
             int lengthWeek = int.Parse(Console.ReadLine()!);
@@ -52,16 +47,15 @@ namespace WestCoastEducation.Domain.Models
             Console.Write("Klassrum eller distans? (K/D): ");
             bool isClassRoom = Console.ReadLine()!.ToUpper() == "K";
 
-            List<Student> studenter = new List<Student>();
             Console.WriteLine("Kurs skapad!");
 
-            return new Course(title, lengthWeek, startDate, endDate, isClassRoom, responsibleTeacher, studenter);
+            return new Course(title, lengthWeek, startDate, endDate, isClassRoom);
         }
 
         
         public override string ToString()
         {
-            return $"{Title}, {ResponsibleTeacher.FirstName} {LengthWeek} veckor, start: {StartDate:yyyy-MM-dd} slut: {EndDate:yyyy-MM-dd} ({(IsClassRoom ? "Klassrum" : "Distans")})";
+            return $"{Title}, {LengthWeek} veckor, start: {StartDate:yyyy-MM-dd} slut: {EndDate:yyyy-MM-dd} ({(IsClassRoom ? "Klassrum" : "Distans")})";
         }
     }
 }

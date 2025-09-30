@@ -2,10 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WestCoastEducation.Interfaces;
+
 
 namespace WestCoastEducation.Domain.Models
 {
-    public class PersonalInfo
+    public class PersonalInfo :IPersonalInfo
     {
         public string FirstName { get; set; } ="";
         public string LastName { get; set; } ="";
