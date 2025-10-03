@@ -1,9 +1,8 @@
-using System;
-using System.Collections.Generic;
+
 
 namespace WestCoastEducation.Domain.Models
 {
-    public class Course
+    public class Course 
     {
         
         public string Title { get; set; } = "";
@@ -26,10 +25,11 @@ namespace WestCoastEducation.Domain.Models
             
         }
 
+        public Course() { }
         
         public static Course CreateCourse()
         {
-            
+
 
             Console.Write("Kursnamn: ");
             string title = Console.ReadLine() ?? "";

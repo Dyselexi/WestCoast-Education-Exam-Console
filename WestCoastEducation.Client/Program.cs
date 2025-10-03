@@ -1,16 +1,27 @@
-﻿namespace WestCoastEducation.App;
-
+﻿using WestCoastEducation.Application.Interfaces;
 using System.ComponentModel;
 using System.Text.Json.Serialization;
+namespace WestCoastEducation.Client;
 using WestCoastEducation.Domain.Models;
+using WestCoastEducation.Application.Services; 
+using WestCoastEducation.Persistence;
+
+
+
 
 class Program
 {
     static void Main(string[] args)
     {
+        string path = $"{Environment.CurrentDirectory}/data/courseInfo.json";
+        var service = new CourseService();
         List<Student> students = new List<Student>();
 
-        List<Course> courses = new List<Course>();
+        List<Course> courses = FileStorage.ReadCourses(path);
+
+
+
+        
 
         while (true)
         {
@@ -54,6 +65,7 @@ class Program
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Course kurs = Course.CreateCourse();
                 courses.Add(kurs);
+                FileStorage.WriteCourses(path, courses);
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(new string('=', 80));
                 Console.WriteLine("Kurs skapad!");
@@ -83,7 +95,7 @@ class Program
                     Console.WriteLine(student.ToString());
                     Console.WriteLine("");
                 }
-                    Console.ResetColor();
+                Console.ResetColor();
             }
             else if (keyPress == "6")
             {
@@ -102,11 +114,11 @@ class Program
                 Console.WriteLine("Felaktigt val, försök igen. observera att endast knappval 1,2,5 och 6 är funktionsdugliga.");
             }
         }
-       
-        
-        
-        
-        
+
+
+
+
+
 
     }
 }

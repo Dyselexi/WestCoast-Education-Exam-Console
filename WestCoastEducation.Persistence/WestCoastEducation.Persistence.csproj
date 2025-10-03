@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <ItemGroup>
-    <ProjectReference Include="..\westcoasteducation.domain\WestCoastEducation.Domain.csproj" />
-  </ItemGroup>
+<ItemGroup>
+  <ProjectReference Include="..\WestCoastEducation.Domain\WestCoastEducation.Domain.csproj" />
+</ItemGroup>
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
