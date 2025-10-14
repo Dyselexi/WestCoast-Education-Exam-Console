@@ -1,27 +1,25 @@
-﻿using WestCoastEducation.Application.Interfaces;
+﻿
 using System.ComponentModel;
 using System.Text.Json.Serialization;
-namespace WestCoastEducation.Client;
 using WestCoastEducation.Domain.Models;
-using WestCoastEducation.Application.Services; 
+using WestCoastEducation.Application.Services;
 using WestCoastEducation.Persistence;
+using WestCoastEducation.Application.Interfaces;
 
-
-
+namespace WestCoastEducation.Client;
 
 class Program
 {
     static void Main(string[] args)
     {
         string path = $"{Environment.CurrentDirectory}/data/courseInfo.json";
-        var service = new CourseService();
-        List<Student> students = new List<Student>();
+        ICourseAdd courseAdd = new CreateCourseConsole();
 
-        List<Course> courses = FileStorage.ReadCourses(path);
-
-
-
+        var personAdd = new CreatePersonConsole();
+        var CourseService = new CourseService(path);
+        var courses = CourseService.FetchCourses();
         
+        List<Student> students = new List<Student>();
 
         while (true)
         {
@@ -51,7 +49,7 @@ class Program
             else if (keyPress == "1")
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Student elev = Student.CreateStudent();
+                Student elev = personAdd.CreatePerson();
                 students.Add(elev);
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(new string('=', 80));
@@ -63,9 +61,9 @@ class Program
             else if (keyPress == "2")
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Course kurs = Course.CreateCourse();
-                courses.Add(kurs);
-                FileStorage.WriteCourses(path, courses);
+                Course kurs = courseAdd.CreateCourse();
+                CourseService.AddCourse(kurs);
+                // courses.Add(kurs);
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(new string('=', 80));
                 Console.WriteLine("Kurs skapad!");
