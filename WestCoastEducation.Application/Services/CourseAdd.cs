@@ -30,22 +30,22 @@ namespace WestCoastEducation.Application.Services
             return new Course(title, lengthWeek, startDate, endDate, isClassRoom);
         }
 
-        private DateTime ReadDate(string Date)
-        {
-            while (true)
+            private DateTime ReadDate(string Date)
             {
-                Console.Write($"{Date} (ÅÅÅÅ-MM-DD): ");
-                string? input = Console.ReadLine();
-
-                if (DateTime.TryParse(input, out DateTime date))
+                while (true)
                 {
-                    return date;
-                }
+                    Console.Write($"{Date} (ÅÅÅÅ-MM-DD): ");
+                    string? input = Console.ReadLine();
 
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Ogiltigt datumformat. Försök igen.");
-                Console.ResetColor();
-            }
+                    if (DateTime.TryParse(input, out DateTime date))
+                    {
+                        return date;
+                    }
+
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Ogiltigt datumformat. Försök igen.");
+                    Console.ResetColor();
+                }
         }
 
             
