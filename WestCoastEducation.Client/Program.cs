@@ -17,7 +17,7 @@ class Program
 
         var personAdd = new CreatePersonConsole();
         var CourseService = new CourseService(path);
-        var courses = CourseService.FetchCourses();
+        
         
         List<Student> students = new List<Student>();
 
@@ -72,18 +72,24 @@ class Program
                 Console.ResetColor();
 
             }
-            // else if (keyPress == "3")
-            // {
-            //     Teacher lärare = Teacher.CreateTeacher();
-            //     Console.WriteLine("Lärarinformation: ");
-            //     Console.WriteLine(lärare);
-            // }
-            // else if (keyPress == "4")
-            // {
-            //     Admin administratör = Admin.CreateAdmin();
-            //     Console.WriteLine("Administratörinformation: ");
-            //     Console.WriteLine(administratör);
-            // }
+            else if (keyPress == "3")
+            {
+                
+                Console.WriteLine("Funktioner för att lägga till denna roll är under uppbyggnad ");
+               
+            }
+            else if (keyPress == "4")
+            {
+                
+                Console.WriteLine("Funktioner för att lägga till denna roll är under uppbyggnad ");
+                
+            }
+            else if (keyPress == "5")
+            {
+                
+                Console.WriteLine("Funktioner för att lägga till denna roll är under uppbyggnad ");
+                
+            }
             else if (keyPress == "6")
             {
 
@@ -92,21 +98,22 @@ class Program
                 foreach (var student in students)
                 {
                     Console.WriteLine(student.ToString());
-                    Console.WriteLine("");
+                    Console.WriteLine("--------------------------------");
                 }
                 Console.ResetColor();
             }
             else if (keyPress == "7")
             {
-
+                var courses = CourseService.FetchCourses();
                 Console.WriteLine("Lista på alla kurser: ");
                 foreach (var course in courses)
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine(course.ToString);
+                    Console.WriteLine(course);
                     Console.WriteLine("");
                     Console.ResetColor();
                 }
+         
             }
             else
             {
