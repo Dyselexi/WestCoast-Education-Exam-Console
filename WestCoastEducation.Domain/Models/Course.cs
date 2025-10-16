@@ -1,5 +1,4 @@
 
-
 namespace WestCoastEducation.Domain.Models
 {
     public class Course

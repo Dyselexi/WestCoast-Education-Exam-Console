@@ -15,11 +15,12 @@ namespace WestCoastEducation.Application.Services
             Console.Write("Längd i veckor: ");
             int lengthWeek = int.Parse(Console.ReadLine()!);
 
-            Console.Write("Startdatum (ÅÅÅÅ-MM-DD): ");
-            DateTime startDate = DateTime.Parse(Console.ReadLine()!);
 
-            Console.Write("Slutdatum (ÅÅÅÅ-MM-DD): ");
-            DateTime endDate = DateTime.Parse(Console.ReadLine()!);
+            DateTime startDate = ReadDate("Startdatum: ");
+            
+            //jag förstår att det finns risker med nedan metod, men tänkte de var kul med variation och ville testa om man kunde skippa ett steg när
+            //registrera en kurs..
+            DateTime endDate = startDate.AddDays(lengthWeek * 7);
 
             Console.Write("Klassrum eller distans? (K/D): ");
             bool isClassRoom = Console.ReadLine()!.ToUpper() == "K";
@@ -29,6 +30,27 @@ namespace WestCoastEducation.Application.Services
             return new Course(title, lengthWeek, startDate, endDate, isClassRoom);
         }
 
+        private DateTime ReadDate(string Date)
+        {
+            while (true)
+            {
+                Console.Write($"{Date} (ÅÅÅÅ-MM-DD): ");
+                string? input = Console.ReadLine();
+
+                if (DateTime.TryParse(input, out DateTime date))
+                {
+                    return date;
+                }
+
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Ogiltigt datumformat. Försök igen.");
+                Console.ResetColor();
+            }
+        }
+
+            
+        }
+
     }
 
-}
+

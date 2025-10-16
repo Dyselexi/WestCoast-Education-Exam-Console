@@ -17,7 +17,7 @@ namespace WestCoastEducation.Domain.Models
         public override string ToString()
         {
             return base.ToString() +
-            $"\nAnställningsdatum: {HiredDate.ToShortDateString}";
+            $"\nAnställningsdatum: {HiredDate.ToShortDateString()}";
         }
     }
 }

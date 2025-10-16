@@ -1,8 +1,5 @@
 using WestCoastEducation.Domain.Models;
 
-
-
-
 namespace WestCoastEducation.Domain.Models
 {
     public class Student : PersonalInfo

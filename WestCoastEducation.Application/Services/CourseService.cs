@@ -2,11 +2,12 @@ using System.Text.Json;
 using WestCoastEducation.Domain.Models;
 using WestCoastEducation.Persistence;
 using System.Text.Encodings.Web;
+using WestCoastEducation.Application.Interfaces;
 
 
 namespace WestCoastEducation.Application.Services
 {
-    public class CourseService
+    public class CourseService : ICourseRepository
     {
         public List<Course> Courses { get; set; } = new();
 
@@ -36,8 +37,16 @@ namespace WestCoastEducation.Application.Services
 
         public void AddCourse(Course course)
         {
+            Courses = FetchCourses();
             Courses.Add(course);
+            SaveCourses(Courses);
             var json = JsonSerializer.Serialize(Courses, _options);
+            fileStorage.WriteJson(_path, json);
+        }
+
+        public void SaveCourses(List<Course> courses)
+        {
+            var json = JsonSerializer.Serialize(courses, _options);
             fileStorage.WriteJson(_path, json);
         }
 
