@@ -24,9 +24,6 @@
         }
       },
       "WestCoastEducation.Persistence/1.0.0": {
-        "dependencies": {
-          "WestCoastEducation.Domain": "1.0.0"
-        },
         "runtime": {
           "WestCoastEducation.Persistence.dll": {
             "assemblyVersion": "1.0.0.0",

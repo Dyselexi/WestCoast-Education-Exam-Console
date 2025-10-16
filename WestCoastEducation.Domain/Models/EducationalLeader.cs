@@ -9,16 +9,15 @@ namespace WestCoastEducation.Domain.Models
     {
         public DateTime HiredDate { get; set; }
 
-        public EducationalLeader(string firstName, string lastName, string phoneNumber, int personNumber, string adress, int zipcode, string city, DateTime hiredDate)
-        : base(firstName, lastName, phoneNumber, personNumber, adress, zipcode, city)
+        public EducationalLeader(string firstName, string lastName, string phoneNumber, int personNumber, Address address, DateTime hiredDate, string knowledgeArea, string responsibleCourse)
+        : base(firstName, lastName, phoneNumber, personNumber, address, knowledgeArea, responsibleCourse)
         {
             HiredDate = hiredDate;
         }
         public override string ToString()
         {
-            return 
-            base.ToString() +
-            $"\nAnställningsdatum: {HiredDate}";
+            return base.ToString() +
+            $"\nAnställningsdatum: {HiredDate.ToShortDateString}";
         }
     }
 }

@@ -32,8 +32,9 @@ class Program
             Console.WriteLine("Tryck 2. För att skapa en kurs");
             Console.WriteLine("Tryck 3. För att skapa en lärare");
             Console.WriteLine("Tryck 4. För att skapa en administratör");
-            Console.WriteLine("Tryck 5. för att kunna lista alla studenter");
-            Console.WriteLine("Tryck 6. för att kunna lista alla kurser");
+            Console.WriteLine("Tryck 5. För att skapa en utbildningsledare");
+            Console.WriteLine("Tryck 6. för att kunna lista alla studenter");
+            Console.WriteLine("Tryck 7. för att kunna lista alla kurser");
             Console.WriteLine("Tryck på 'x' för att avsluta programmet");
             Console.WriteLine(new string('=', 80));
             Console.ResetColor();
@@ -83,7 +84,7 @@ class Program
             //     Console.WriteLine("Administratörinformation: ");
             //     Console.WriteLine(administratör);
             // }
-            else if (keyPress == "5")
+            else if (keyPress == "6")
             {
 
                 Console.ForegroundColor = ConsoleColor.Green;
@@ -95,21 +96,21 @@ class Program
                 }
                 Console.ResetColor();
             }
-            else if (keyPress == "6")
+            else if (keyPress == "7")
             {
 
                 Console.WriteLine("Lista på alla kurser: ");
                 foreach (var course in courses)
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine(course);
+                    Console.WriteLine(course.ToString);
                     Console.WriteLine("");
                     Console.ResetColor();
                 }
             }
             else
             {
-                Console.WriteLine("Felaktigt val, försök igen. observera att endast knappval 1,2,5 och 6 är funktionsdugliga.");
+                Console.WriteLine("Felaktigt val, försök igen. observera att endast knappval 1,2,6 och 7 är funktionsdugliga.");
             }
         }
 

@@ -15,9 +15,6 @@
       "WestCoastEducation.Persistence/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
-        "dependencies": {
-          "WestCoastEducation.Domain": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/WestCoastEducation.Persistence.dll": {}
         },
@@ -51,11 +48,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\johan\\Documents\\skola\\Exam\\WestCoastEducation\\WestCoastEducation.Application\\WestCoastEducation.Application.csproj",
+      "projectUniqueName": "C:\\Users\\johan\\Documents\\skola\\Exam\\westcoasteducation\\WestCoastEducation.Application\\WestCoastEducation.Application.csproj",
       "projectName": "WestCoastEducation.Application",
-      "projectPath": "C:\\Users\\johan\\Documents\\skola\\Exam\\WestCoastEducation\\WestCoastEducation.Application\\WestCoastEducation.Application.csproj",
+      "projectPath": "C:\\Users\\johan\\Documents\\skola\\Exam\\westcoasteducation\\WestCoastEducation.Application\\WestCoastEducation.Application.csproj",
       "packagesPath": "C:\\Users\\johan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\johan\\Documents\\skola\\Exam\\WestCoastEducation\\WestCoastEducation.Application\\obj\\",
+      "outputPath": "C:\\Users\\johan\\Documents\\skola\\Exam\\westcoasteducation\\WestCoastEducation.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\johan\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -70,11 +67,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\johan\\Documents\\skola\\Exam\\WestCoastEducation\\WestCoastEducation.Domain\\WestCoastEducation.Domain.csproj": {
-              "projectPath": "C:\\Users\\johan\\Documents\\skola\\Exam\\WestCoastEducation\\WestCoastEducation.Domain\\WestCoastEducation.Domain.csproj"
+            "C:\\Users\\johan\\Documents\\skola\\Exam\\westcoasteducation\\WestCoastEducation.Domain\\WestCoastEducation.Domain.csproj": {
+              "projectPath": "C:\\Users\\johan\\Documents\\skola\\Exam\\westcoasteducation\\WestCoastEducation.Domain\\WestCoastEducation.Domain.csproj"
             },
-            "C:\\Users\\johan\\Documents\\skola\\Exam\\WestCoastEducation\\WestCoastEducation.Persistence\\WestCoastEducation.Persistence.csproj": {
-              "projectPath": "C:\\Users\\johan\\Documents\\skola\\Exam\\WestCoastEducation\\WestCoastEducation.Persistence\\WestCoastEducation.Persistence.csproj"
+            "C:\\Users\\johan\\Documents\\skola\\Exam\\westcoasteducation\\WestCoastEducation.Persistence\\WestCoastEducation.Persistence.csproj": {
+              "projectPath": "C:\\Users\\johan\\Documents\\skola\\Exam\\westcoasteducation\\WestCoastEducation.Persistence\\WestCoastEducation.Persistence.csproj"
             }
           }
         }

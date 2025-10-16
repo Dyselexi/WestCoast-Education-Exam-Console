@@ -7,24 +7,13 @@ namespace WestCoastEducation.Domain.Models
 {
     public class Teacher : PersonalInfo
     {
-        public string FirstName { get; set; } = "";
-        public string LastName { get; set; } = "";
-        public string PhoneNumber { get; set; } = "";
-        public int PersonNummer { get; set; }
-        public string Adress { get; set; } = "";
-        public int ZipCode { get; set; }
-        public string City { get; set; } = "";
 
-        public Teacher(string firstName, string lastName, string phoneNumber, int personNumber, string adress, int zipcode, string city)
-        :base(firstName, lastName,phoneNumber,personNumber,adress,zipcode,city)
+        public string KnowledgeArea { get; set; } = "";
+        public string ResponsibleCourse { get; set; } = "";
+        public Teacher(string firstName, string lastName, string phoneNumber, int personNumber, Address address, string knowledgeArea, string responsibleCourse)
+        :base(firstName, lastName,phoneNumber,personNumber,address)
         {
-            FirstName = firstName;
-            LastName = lastName;
-            PhoneNumber = phoneNumber;
-            PersonNummer = personNumber;
-            Adress = adress;
-            ZipCode = zipcode;
-            City = city;
+            
         }
 
         public override string ToString()
@@ -33,9 +22,10 @@ namespace WestCoastEducation.Domain.Models
                 $"Efternamn: {LastName}\n" +
                 $"Telefonnummer: {PhoneNumber}\n" +
                 $"Personnummer: {PersonNummer}\n" +
-                $"Adress: {Adress}\n" +
-                $"Postnummer: {ZipCode}\n" +
-                $"Stad: {City}";
+                $"Adress: {Address}" +
+                $"Kunskapsområde: {KnowledgeArea}" +
+                $"Kursansvarig: {ResponsibleCourse}";
+                
         }
     }
 }

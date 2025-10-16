@@ -5,7 +5,12 @@
   <ItemGroup>
     <ProjectReference Include="..\WestCoastEducation.domain\WestCoastEducation.Domain.csproj" />
     <ProjectReference Include="..\WestCoastEducation.Persistence\WestCoastEducation.Persistence.csproj" />
+     
   </ItemGroup>
+  
+
+
+
 
 
 

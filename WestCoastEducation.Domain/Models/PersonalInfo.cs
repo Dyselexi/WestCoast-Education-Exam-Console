@@ -5,14 +5,12 @@ using System.Threading.Tasks;
 
 namespace WestCoastEducation.Domain.Models
 {
-    public class PersonalInfo(string firstName,string lastName, string phoneNumber, int personNumber, string adress, int zipCode, string city)
+    public abstract class PersonalInfo(string firstName,string lastName, string phoneNumber, int personNumber, Address address)
     {
-        string FirstName { get; set; } = firstName;
-        string LastName { get; set; }= lastName;
-        string PhoneNumber { get; set; }= phoneNumber;
-        int PersonNummer { get; set; }= personNumber;
-        string Adress { get; set; }= adress;
-        int ZipCode { get; set; }= zipCode;
-        string City { get; set; } = city;
+        protected string FirstName { get; set; } = firstName;
+        protected string LastName { get; set; }= lastName;
+        protected string PhoneNumber { get; set; }= phoneNumber;
+        protected int PersonNummer { get; set; }= personNumber;
+        protected Address? Address { get; set; } = address;
     }
 }
